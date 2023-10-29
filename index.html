@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>INTERACTIVE HOTSPOT MAPPING</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+
+        header {
+            background-color: #d6c9c9; /* Red background color */
+            color: #000000;
+            text-align: center;
+            padding: 5px 0; /* Adjust header padding as needed */
+            position: fixed;
+            width: 100%;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px; /* Adjust header height as needed */
+        }
+
+        .title {
+            font-size: 0.8em;
+        }
+
+        .logo img {
+            height: 60px; /* Adjust the logo height as needed */
+            margin-left: 20px; /* Adjust the logo's margin as needed */
+        }
+
+        .container {
+            display: flex;
+            border: 1px solid #919292;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 70px; /* Margin to create space between header and content */
+            padding-top: 20px; /* Adjust padding top as needed */
+        }
+
+        #map {
+            width: 70%;
+            height: auto;
+            cursor: pointer;
+        }
+
+        .description {
+            padding: 20px;
+            width: 30%;
+            background-color: #f3cce4; /* Light gray background color */
+            color: #333; /* Text color */
+        }
+
+        .title {
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .title h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        .description h2 {
+            margin-top: 0;
+        }
+
+        .description p {
+            line-height: 1;
+        }
+
+        #displayedImg {
+            width: 100%;
+            display: none; /* Initially hide the image */
+        }
+
+        .mph-section {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="gim-logo.png" alt="GIM Logo">
+        </div>
+        <div class="title">
+            <h1>INTERACTIVE HOTSPOT MAPPING</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="description">
+            <div class="title">
+                <h2>Sustainability Measures</h2>
+            </div>
+            <h2>GIM’s various initiatives spread across various domains to bring about a positive change in the environment we’re in. Community engagement, startup incubation, emotional development and sustainable actions are our ways of improving our community for the greater good.</h2>
+            <p id="selectedAreaDescription">Click on the map to see the details.</p>
+            <img id="displayedImg" src="" alt="Selected Image">
+        </div>
+
+        <img id="map" src="Map.png" alt="Custom Map" usemap="#areasMap" onclick="scrollToMPH()">
+    </div>
+
+    <div class="mph-section" id="mphSection">
+        <h2>MPH</h2>
+        <img src="MPH.jpg" alt="MPH Image" style="width: 50%; display: block; margin: 20px auto;">
+        <p>Multipurpose Hall</p>
+    </div>
+
+    <script>
+        function scrollToMPH() {
+            var mphSection = document.getElementById('mphSection');
+            mphSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
